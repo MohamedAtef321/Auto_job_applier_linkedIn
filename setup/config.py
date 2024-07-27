@@ -17,9 +17,9 @@ GitHub:     https://github.com/GodsScion/Auto_job_applier_linkedIn
 # >>>>>>>>>>> Global Settings <<<<<<<<<<<
 
 # Directory and name of the files where history of applied jobs is saved (Sentence after the last "/" will be considered as the file name).
-file_name = "all excels/all_applied_applications_history.csv"
-failed_file_name = "all excels/all_failed_applications_history.csv"
-logs_folder_path = "logs/"
+file_name = "runs/all excels/all_applied_applications_history.csv"
+failed_file_name = "runs/all excels/all_failed_applications_history.csv"
+logs_folder_path = "runs/logs/"
 
 # Set the maximum amount of time allowed to wait between each click in secs
 click_gap = 0                      # Enter max allowed secs to wait approximately. (Only Non Negative Integers Eg: 0,1,2,3,....)
@@ -34,13 +34,13 @@ disable_extensions = True          # True or False
 safe_mode = False                  # True or False
 
 # Do you want scrolling to be smooth or instantaneous? (Can reduce performance if True)
-smooth_scroll = False              # True or False
+smooth_scroll = True              # True or False
 
 # If enabled (True), the program would keep your screen active and prevent PC from sleeping. Instead you could disable this feature (set it to false) and adjust your PC sleep settings to Never Sleep or a preferred time. 
 keep_screen_awake = True           # True or False (Note: Will temporarily deactivate when any application dialog boxes are present (Eg: Pause before submit, Help needed for a question..))
 
 # Run in undetected mode to bypass anti-bot protections (Preview Feature, UNSTABLE. Recommended to leave it as False)
-undetected_mode = True             # True or False
+undetected_mode = False             # True or False
 
 # Use ChatGPT for resume building (Experimental Feature can break the application. Recommended to leave it as False) 
 use_resume_generator = False       # True or False ,   This feature may only work with 'undetected_mode' = True. As ChatGPT website is hosted by CloudFlare which is protected by Anti-bot protections!
@@ -50,12 +50,23 @@ use_resume_generator = False       # True or False ,   This feature may only wor
 # ----------------------------------------------  AUTO APPLIER  ---------------------------------------------- #
 
 # Login Credentials for LinkedIn
-username = "username@example.com"  # Enter your username in the quotes
+username = "mohamed.atef.ghanem123@gmail.com"  # Enter your username in the quotes
 password = "example_password"      # Enter your password in the quotes
 
 # These Sentences are Searched in LinkedIn
 # Enter your search terms inside '[ ]' with quotes ' "searching title" ' for each search followed by comma ', ' Eg: ["Software Engineer", "Software Developer", "Selenium Developer"]
-search_terms = ["Software Engineer", "Software Developer"]
+# search_terms = ["Software Engineer", "Software Developer"]
+search_terms = ["Machine Learning Engineer", 
+                "Data Scientist", 
+                "AI Engineer", 
+                "ML Engineer", 
+                "ML Scientist", 
+                "Python Developer", 
+                "Data Analyst", 
+                "Data Engineer", 
+                "Data Scientist",
+                "Computer Vision",
+                "NLP"]
 
 # Search location, this will be filled in "City, state, or zip code" search box. If left empty as "", tool will not fill it.
 search_location = ""               # Some valid examples: "", "United States", "India", "Chicago, Illinois, United States", "90001, Los Angeles, California, United States", "Bengaluru, Karnataka, India", etc.
@@ -77,9 +88,9 @@ salary = ""                        # "$40,000+", "$60,000+", "$80,000+", "$100,0
 
 easy_apply_only = True             # True or False
 
-experience_level = []              # (multiple select) "Internship", "Entry level", "Associate", "Mid-Senior level", "Director", "Executive"
-job_type = []                      # (multiple select) "Full-time", "Part-time", "Contract", "Temporary", "Volunteer", "Internship", "Other"
-on_site = []                       # (multiple select) "On-site", "Remote", "Hybrid"
+experience_level = ["Internship", "Entry level", "Associate"]              # (multiple select) "Internship", "Entry level", "Associate", "Mid-Senior level", "Director", "Executive"
+job_type = ["Full-time", "Part-time", "Contract"]                      # (multiple select) "Full-time", "Part-time", "Contract", "Temporary", "Volunteer", "Internship", "Other"
+on_site = ["On-site", "Remote", "Hybrid"]                       # (multiple select) "On-site", "Remote", "Hybrid"
 
 companies = []                     # (dynamic multiple select) make sure the name you type in list exactly matches with the company name you're looking for, including capitals. 
                                    # Eg: "7-eleven", "Google","X, the moonshot factory","YouTube","CapitalG","Adometry (acquired by Google)","Meta","Apple","Byte Dance","Netflix", "Snowflake","Mineral.ai","Microsoft","JP Morgan","Barclays","Visa","American Express", "Snap Inc", "JPMorgan Chase & Co.", "Tata Consultancy Services", "Recruiting from Scratch", "Epic", and so on...
@@ -99,58 +110,58 @@ fair_chance_employer = False       # True or False
 # >>>>>>>>>>> Easy Apply Questions & Inputs <<<<<<<<<<<
 
 # Phone number (required), make sure it's valid.
-phone_number = "9876543210"        # Enter your 10 digit number in quotes Eg: "9876543210"
+phone_number = "+201013424947"        # Enter your 10 digit number in quotes Eg: "9876543210"
 
 # Give an relative or absolute path of your default resume to be uploaded. If file in not found, will continue using your previously uploaded resume in LinkedIn.
-default_resume_path = "all resumes/default/resume.pdf"      # (In Development)
+default_resume_path = r"C:\Downloads SSD\Mohamed Atef CV UP 2.pdf"      # (In Development)
 
 # What do you want to answer for questions that ask about years of experience you have, this is different from current_experience? 
 years_of_experience = "1"          # A number in quotes Eg: "0","1","2","3","4", etc.
 
 # Do you need visa sponsorship now or in future?
-require_visa = "No"               # "Yes" or "No"
+require_visa = "Yes"               # "Yes" or "No"
 
 # What is the status of your citizenship? # If left empty as "", tool will not answer the question. However, note that some companies make it compulsory to be answered
 # Valid options are: "U.S. Citizen/Permanent Resident", "Non-citizen allowed to work for any employer", "Non-citizen allowed to work for current employer", "Non-citizen seeking work authorization", "Canadian Citizen/Permanent Resident" or "Other"
-us_citizenship = "U.S. Citizen/Permanent Resident"
+us_citizenship = "Other"
 
 
 # What is the link to your portfolio website, leave it empty as "", if you want to leave this question unanswered
-website = "www.example.bio"                       # "www.example.bio" or "" and so on....
+website = ""                       # "www.example.bio" or "" and so on....
 
 # What to enter in your desired salary question, only enter in numbers inside quotes as some companies only allow numbers
-desired_salary = "90000"          # "80000", "90000", "100000" or "120000" and so on....
+desired_salary = "15000"          # "80000", "90000", "100000" or "120000" and so on....
 
 # Example question: "On a scale of 1-10 how much experience do you have building web or mobile applications? 1 being very little or only in school, 10 being that you have built and launched applications to real users"
-confidence_level = "7"             # Any number between "1" to "10" including 1 and 10, put it in quotes ""
+confidence_level = "8"             # Any number between "1" to "10" including 1 and 10, put it in quotes ""
 
-current_city = ""                  # If left empty will fill in location of jobs location.
+current_city = "Cairo"                  # If left empty will fill in location of jobs location.
 
-first_name = "First"                 # Your first name in quotes Eg: "First", "Sai"
-middle_name = "Middle"            # Your name in quotes Eg: "Middle", "Vignesh", ""
-last_name = "Last"                # Your last name in quotes Eg: "Last", "Golla"
+first_name = "Mohamed"                 # Your first name in quotes Eg: "First", "Sai"
+middle_name = "Atef"            # Your name in quotes Eg: "Middle", "Vignesh", ""
+last_name = "Ghanem"                # Your last name in quotes Eg: "Last", "Golla"
 
 # Your LinkedIn headline in quotes Eg: "Software Engineer @ Google, Masters in Computer Science", "Recent Grad Student @ MIT, Computer Science"
-headline = "Headline"
+headline = "Python Developer | AI Engineer | ML Engineer | Data Scientist"
 
 # Your summary in quotes, use \n to add line breaks
-summary = "Summary"
+summary = r"I'm a Freelance Software Engineer with big ambitions and huge goals, and I'll do my best to achieve them all."
 
 # Your cover letter in quotes, use \n to add line breaks
-cover_letter = "Cover Letter"
+cover_letter = r"I'm a Freelance Software Engineer with big ambitions and huge goals, and I'll do my best to achieve them all."
 
 
 ## US Equal Opportunity questions
 # What is your ethnicity or race? If left empty as "", tool will not answer the question. However, note that some companies make it compulsory to be answered
-ethnicity = "Decline"              # "Decline", "Hispanic/Latino", "American Indian or Alaska Native", "Asian", "Black or African American", "Native Hawaiian or Other Pacific Islander", "White", "Other"
+ethnicity = "Other"              # "Decline", "Hispanic/Latino", "American Indian or Alaska Native", "Asian", "Black or African American", "Native Hawaiian or Other Pacific Islander", "White", "Other"
 
 # How do you identify yourself? If left empty as "", tool will not answer the question. However, note that some companies make compulsory to be answered
-gender = "Decline"                 # "Male", "Female", "Other", "Decline" or ""
+gender = "Male"                 # "Male", "Female", "Other", "Decline" or ""
 
 # Are you physically disabled? If left empty as "", tool will not answer the question. However, note that some companies make it compulsory to be answered
-disability_status = "Decline"      # 
+disability_status = "No"      # 
 
-veteran_status = "Decline"         # "Yes", "No", "Decline"
+veteran_status = "No"         # "Yes", "No", "Decline"
 ##
 
 
@@ -188,11 +199,11 @@ current_experience = 1             # Integers > -2 (Ex: -1, 0, 1, 2, 3, 4...)
 
 ## Allow Manual Inputs
 # Should the tool pause before every submit application during easy apply to let you check the information?
-pause_before_submit = True         # True or False ,   Will be treated as False if run_in_background is True
+pause_before_submit = False         # True or False ,   Will be treated as False if run_in_background is True
 
 # Should the tool pause if it needs help in answering questions during easy apply?
 # Note: If set as False will answer randomly...
-pause_at_failed_question = True    # True or False ,   Will be treated as False if run_in_background is True
+pause_at_failed_question = False    # True or False ,   Will be treated as False if run_in_background is True
 ##
 
 # Keep the External Application tabs open? (Note: RECOMMENDED TO LEAVE IT AS TRUE, if you set it false, be sure to CLOSE ALL TABS BEFORE CLOSING THE BROWSER!!!)
@@ -203,7 +214,7 @@ switch_number = 30                 # Only numbers greater than 25... Don't put i
 
 ## Upcoming features (In Development)
 # Send connection requests to HR's
-connect_hr = True                  # True or False
+connect_hr = False                  # True or False
 
 # What message do you want to send during connection request? (Max. 200 Characters)
 connect_request_message = ""       # Leave Empty to send connection request without personalized invitation (recommended to leave it empty, since you only get 10 per month without LinkedIn Premium*)
@@ -227,7 +238,7 @@ chatGPT_password = "example_password"
 chatGPT_resume_chat_title = "Resume review and feedback."
 
 # Give the path to the folder where all the generated resumes are to be stored
-generated_resume_path = "all resumes/"
+generated_resume_path = "runs/all resumes/"
 
 
 

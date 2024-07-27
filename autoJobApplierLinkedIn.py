@@ -776,7 +776,12 @@ def main():
         # Login to LinkedIn
         tabs_count = len(driver.window_handles)
         driver.get("https://www.linkedin.com/login")
-        if not is_logged_in_LN(): login_LN()
+        if not is_logged_in_LN(): 
+            # -----------------------------------------------
+            # login_LN()
+            input("Not logged in to LinkedIn. Please login to LinkedIn and press Enter to continue...")
+            wait.until(EC.url_to_be("https://www.linkedin.com/feed/"))
+            # -----------------------------------------------
         
         linkedIn_tab = driver.current_window_handle
 
@@ -785,7 +790,13 @@ def main():
             try:
                 driver.switch_to.new_window('tab')
                 driver.get("https://chat.openai.com/")
-                if not is_logged_in_GPT(): login_GPT()
+                if not is_logged_in_GPT(): 
+                    # -----------------------------------------------
+                    # login_GPT()
+                    input("Not logged in to ChatGPT. Please login to ChatGPT and press Enter to continue...")
+                    wait.until(EC.url_to_be("https://chat.openai.com/"))
+                    wait.until(EC.presence_of_element_located((By.ID, "prompt-textarea")))
+                    # -----------------------------------------------
                 open_resume_chat()
                 global chatGPT_tab
                 chatGPT_tab = driver.current_window_handle
